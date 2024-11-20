@@ -1,0 +1,68 @@
+﻿{
+  "compileOnSave": false,
+  "compilerOptions": {
+
+    //Type Checking
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": false, // MGG: lots of errors that make a distinction between a field defined with ? or with undefined
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false, //MGG: the high added value errors were removed; remained errors with low added value corrections: 'as keyof typeof', put type on function params with _
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": false, // MGG: the easy cleanable errors were removed; only remained the tough errors to clean (e.g. conversions between a unknown and some other type)
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false, // MGG: this option is dependent on strictNullChecks=true AND implies properties on classes to always be initialized (almost never happens)!
+    "useUnknownInCatchVariables": true,
+
+    //Modulesgulp
+    "baseUrl": ".",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    //Emit
+    "importsNotUsedAsValues": "remove",
+    "noEmit": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": false,
+
+    //Editor Support
+    "plugins": [
+      {
+        "type": "raw"
+      }
+    ],
+
+    //Interop Constraints
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": false,
+
+    //Language and Environment
+    "jsx": "react-jsx",
+    "lib": [ "ES5", "ES2015", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020", "ES2021", "ES2022", "DOM" ],
+    "target": "ES2022",
+
+    //Compiler Diagnostics
+    "diagnostics": false,
+
+    //Projects
+    "incremental": true,
+    "tsBuildInfoFile": "./.typecache/react",
+
+    //Completeness
+    "skipLibCheck": true
+  },
+  "include": ["src/*.ts", "src/*.tsx"],
+  "exclude": [
+    "./node_modules",
+  ]
+}
